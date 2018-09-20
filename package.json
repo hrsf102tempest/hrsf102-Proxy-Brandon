@@ -8,10 +8,23 @@
     "node": ">=6.13.0"
   },
   "scripts": {
+    "server-dev": "nodemon server/index.js"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "es6-promise": "^4.2.5",
+    "express": "^4.16.3",
+    "isomorphic-fetch": "^2.2.1",
+    "jquery": "^3.3.1",
+    "morgan": "^1.9.1",
+    "node-fetch": "^2.2.0",
+    "nodemon": "^1.18.4"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "grunt-aws": "^0.6.2",
+    "grunt-aws-s3": "^2.0.0",
+    "grunt-contrib-uglify": "^4.0.0",
+    "grunt-s3": "^0.2.0-alpha.3"
   }
 }
