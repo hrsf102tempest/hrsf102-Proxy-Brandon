@@ -33,4 +33,17 @@ app.get('/api/reservations/:businessId', (req, res) => {
     });  
 });
 
+// app.get('/api/photos/:businessId', (req, res) => {
+//   console.log('made the RESERVATION api request')
+//   const params = req.params.businessId;
+//   fetch(`http://127.0.0.1:3001/businesses/${params}`)
+//     .then((res) => {
+//         return res.json();
+//     })
+//     .then(json => {
+//       console.log("json data, reservations", json)
+//       res.send(json)
+//     });  
+// });
+
 app.listen(3000);
