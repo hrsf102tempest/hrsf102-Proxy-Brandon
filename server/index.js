@@ -28,22 +28,38 @@ app.get('/api/reservations/:businessId', (req, res) => {
         return res.json();
     })
     .then(json => {
-      console.log("json data, reservations", json)
       res.send(json)
     });  
 });
 
-// app.get('/api/photos/:businessId', (req, res) => {
-//   console.log('made the RESERVATION api request')
-//   const params = req.params.businessId;
-//   fetch(`http://127.0.0.1:3001/businesses/${params}`)
-//     .then((res) => {
-//         return res.json();
-//     })
-//     .then(json => {
-//       console.log("json data, reservations", json)
-//       res.send(json)
-//     });  
-// });
+app.get('/api/photos/:id', (req, res) => {
+  const id = req.params.id;
+  fetch(`http://localhost:3002/businesses/${id}`)
+    .then((res) => {
+      return res.json();
+    })
+    .then(json => {
+      console.log("photos", json);
+      res.status(200).send(json)
+    });
+});
+
+app.get('/api/reviews/restaurants/:id', (req, res) => {
+  const id = req.params.id;
+  fetch(`http://localhost:3003/restaurants/${id}`)
+    .then((res) => {
+      return res.json();
+    })
+    .then(json => res.status(200).send(JSON.stringify(json)));
+});
+
+app.get('/api/reviews/reviewers/', (req, res) => {
+  const id = req.params.id;
+  fetch(`http://localhost:3003/reviewers`)
+    .then((res) => {
+      return res.json();
+    })
+    .then(json => res.status(200).send(JSON.stringify(json)));
+});
 
 app.listen(3000);
